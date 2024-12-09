@@ -18,7 +18,8 @@ spec:
     proxy:
       service:
         type: NodePort
+
     ingress:
-      enabled: true
+      enabled: false
       hosts:
         - host: jupyterhub.127.0.0.1.sslip.io
