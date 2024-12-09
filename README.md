@@ -11,9 +11,9 @@ brew bundle
 # Alternatively, install at least Taskfile (manually)
 brew install go-task
 
-# Show all tasks available
-task
-task 
+# make sure you have set a valid GITHUB_TOKEN environment variable
+# make sure you have set the correct kube-context, eg.g rancher-desktop
+task bootstrap-flux
 ```
 
 ## Maintainer

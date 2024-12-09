@@ -25,7 +25,7 @@ tasks:
     status:
       - brew bundle check --verbose
 
-  bootstrap:
+  bootstrap-flux:
     desc: Bootstrap Flux
     silent: true
     requires:
@@ -40,8 +40,7 @@ tasks:
         --read-write-key \
         --personal
 
-  reconcile:
+  reconcile-flux:
     desc: Reconcile flux-system
     silent: true
     cmd: flux reconcile source git flux-system
-
