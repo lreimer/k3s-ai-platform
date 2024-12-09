@@ -19,6 +19,14 @@ task bootstrap-flux
 # several dashboards and services are accessible via Ingress
 open http://grafana.127.0.0.1.sslip.io
 
+# to test the OpenAI proxy, issue the following curl command
+curl http://openai.127.0.0.1.sslip.io/v1/chat/completions \
+  -H "Content-Type: application/json" \
+  -d '{
+     "model": "gpt-4o-mini",
+     "messages": [{"role": "user", "content": "Say this is a test!"}],
+     "temperature": 0.7
+   }'
 ```
 
 ## Maintainer

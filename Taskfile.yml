@@ -6,8 +6,6 @@ dotenv: ['.env', '{{.HOME}}/.env']
 env:
   REPO_NAME: k3s-ai-platform
   GITHUB_USER: lreimer
-  GITHUB_TOKEN:
-  OPENAI_API_KEY:
   
 vars: {}
 
