@@ -35,6 +35,15 @@ open http://langflow.127.0.0.1.sslip.io
 open http://jupyther.127.0.0.1.sslip.io 
 ```
 
+## Crossplane GCP
+
+```bash
+gcloud iam service-accounts create crossplane-system --display-name=Crossplane
+gcloud projects add-iam-policy-binding cloud-native-experience-lab --role=roles/iam.serviceAccountUser --member serviceAccount:crossplane-system@cloud-native-experience-lab.iam.gserviceaccount.com
+gcloud projects add-iam-policy-binding cloud-native-experience-lab --role=roles/storage.admin --member serviceAccount:crossplane-system@cloud-native-experience-lab.iam.gserviceaccount.com
+gcloud iam service-accounts keys create $HOME./.gcp/credentials.json --iam-account crossplane-system@cloud-native-experience-lab.iam.gserviceaccount.com
+```
+
 ## Maintainer
 
 M.-Leander Reimer (@lreimer), <mario-leander.reimer@qaware.de>
