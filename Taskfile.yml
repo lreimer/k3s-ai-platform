@@ -26,7 +26,7 @@ tasks:
     status:
       - brew bundle check --verbose
 
-  bootstrap-flux:
+  flux-bootstrap:
     desc: Bootstrap Flux
     silent: true
     requires:
@@ -41,10 +41,15 @@ tasks:
         --read-write-key \
         --personal
 
-  reconcile-flux:
+  flux-sync:
     desc: Reconcile flux-system
     silent: true
     cmd: flux reconcile source git flux-system
+
+  flux-status:
+    desc: Show the status of the flux-system
+    silent: true
+    cmd: flux get all --all-namespaces
 
   create-secret:
     desc: Create the OpenAI secret

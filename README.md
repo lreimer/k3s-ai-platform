@@ -12,7 +12,7 @@ brew bundle
 brew install go-task
 
 # make sure you have set a valid GITHUB_TOKEN environment variable
-# make sure you have set the correct kube-context, eg.g rancher-desktop
+# make sure you have set the correct kube-context, e.g. rancher-desktop
 taks create-secret
 task bootstrap-flux
 ```
