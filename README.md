@@ -13,11 +13,10 @@ brew install go-task
 
 # make sure you have set a valid GITHUB_TOKEN environment variable
 # make sure you have set the correct kube-context, e.g. rancher-desktop
-taks create-secret
+task create-secret
 task bootstrap-flux
 
-# the Kube Prometheus Stack is accessiable via Ingresshelm repo add crossplane-stable https://charts.crossplane.io/stable
-
+# the Kube Prometheus Stack is accessiable via Ingress
 open http://grafana.127.0.0.1.sslip.io
 
 # to test the OpenAI proxy, issue the following curl command

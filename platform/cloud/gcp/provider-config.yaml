@@ -1,0 +1,13 @@
+apiVersion: gcp.upbound.io/v1beta1
+kind: ProviderConfig
+metadata:
+  name: provider-gcp-config
+  namespace: crossplane-system
+spec:
+  projectID: cloud-native-experience-lab 
+  credentials:
+    source: Secret
+    secretRef:
+      namespace: crossplane-system
+      name: gcp-secret
+      key: creds
