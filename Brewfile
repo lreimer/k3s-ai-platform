@@ -1,0 +1,5 @@
+tap "fluxcd/tap"
+brew "go-task"
+brew "fluxcd/tap/flux"
+brew "helm"
+brew "kustomize"
