@@ -58,8 +58,11 @@ tasks:
     cmd: kubectl create secret generic openai-api-key --from-literal=OPENAI_API_KEY={{.OPENAI_API_KEY}} --from-literal=OPENAI_APIKEY={{.OPENAI_API_KEY}}
 
   gcp-secret:
-    desc: Create the GCP secret
+    desc: Create the GCP secrety
     silent: true
-    requires:
-      vars: [GCP_PROJECT, GCP_SA_KEY]
-    cmd: kubectl create secret generic gcp-secret -n crossplane-system --from-file=creds=./gcp-credentials.json
+    cmd: kubectl create secret generic gcp-secret -n crossplane-system --from-file=creds=./.gcp/credentials.json
+
+  aws-secret:
+    desc: Create the AWS secret
+    silent: true
+    cmd: kubectl create secret generic aws-secret -n crossplane-system --from-file=creds={{.HOME}}/.aws/credentials

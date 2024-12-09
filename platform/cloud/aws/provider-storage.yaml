@@ -1,0 +1,6 @@
+kind: Provider
+metadata:
+  name: provider-aws-s3
+  namespace: crossplane-system
+spec:
+  package: xpkg.upbound.io/upbound/provider-aws-s3:v1.17.0
