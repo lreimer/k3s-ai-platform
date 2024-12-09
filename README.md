@@ -16,7 +16,8 @@ brew install go-task
 taks create-secret
 task bootstrap-flux
 
-# several dashboards and services are accessible via Ingress
+# the Kube Prometheus Stack is accessiable via Ingresshelm repo add crossplane-stable https://charts.crossplane.io/stable
+
 open http://grafana.127.0.0.1.sslip.io
 
 # to test the OpenAI proxy, issue the following curl command
