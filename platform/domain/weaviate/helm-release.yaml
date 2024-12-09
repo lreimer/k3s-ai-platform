@@ -36,7 +36,7 @@ spec:
       # Expose metrics on port 2112 for Prometheus to scrape
       PROMETHEUS_MONITORING_ENABLED: true
  
-    envSecrets:
+    # envSecrets:
     # create a Kubernetes secret with AUTHENTICATION_APIKEY_ALLOWED_KEYS key and its respective value
     # AUTHENTICATION_APIKEY_ALLOWED_KEYS: name-of-the-k8s-secret-containing-the-comma-separated-api-keys
 
