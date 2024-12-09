@@ -26,15 +26,15 @@ spec:
     ingress:
       enabled: true
       hosts:
-        - host: langflow-ide.127.0.0.1.sslip.io
+        - host: langflow.127.0.0.1.sslip.io
       paths:
-        - path: /
+        - backend:
+          service:
+            name: langflow
+            port:
+              number: 8080
+          path: /
           pathType: Prefix
-          backend:
-            service:
-              name: langflow-ide
-              port:
-                number: 8080
 
     langflow:
       backend:
