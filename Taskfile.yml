@@ -7,6 +7,7 @@ env:
   REPO_NAME: k3s-ai-platform
   GITHUB_USER: lreimer
   GITHUB_TOKEN:
+  OPENAI_API_KEY:
   
 vars: {}
 
@@ -35,7 +36,7 @@ tasks:
         --owner={{.GITHUB_USER}} \
         --repository={{.REPO_NAME}} \
         --branch=main \
-        --path=./clusters/{{.REPO_NAME}} \
+        --path=./platform/foundation \
         --components-extra=image-reflector-controller,image-automation-controller \
         --read-write-key \
         --personal
@@ -44,3 +45,10 @@ tasks:
     desc: Reconcile flux-system
     silent: true
     cmd: flux reconcile source git flux-system
+
+  create-secret:
+    desc: Create the OpenAI secret
+    silent: true
+    requires:
+      vars: [OPENAI_API_KEY]
+    cmd: kubectl create secret generic openai-api-key --from-literal=OPENAI_API_KEY={{.OPENAI_API_KEY}}
