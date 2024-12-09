@@ -36,9 +36,9 @@ spec:
       # Expose metrics on port 2112 for Prometheus to scrape
       PROMETHEUS_MONITORING_ENABLED: true
  
-    # envSecrets:
-    # create a Kubernetes secret with AUTHENTICATION_APIKEY_ALLOWED_KEYS key and its respective value
-    # AUTHENTICATION_APIKEY_ALLOWED_KEYS: name-of-the-k8s-secret-containing-the-comma-separated-api-keys
+    envSecrets:
+      OPENAI_API_KEY: openai-api-key
+      OPENAI_APIKEY: openai-api-key
 
     modules:
       # The text2vec-openai module uses OpenAI Embeddings API
@@ -61,6 +61,6 @@ spec:
     # It is also possible to configure authentication and authorization through a
     # custom configmap The authorization and authentication values defined in
     # values.yaml will be ignored when defining a custom config map.
-    custom_config_map:
-      enabled: true
-      name: openai-api-key
+    # custom_config_map:
+    #   enabled: false
+    #   name: openai-api-key
