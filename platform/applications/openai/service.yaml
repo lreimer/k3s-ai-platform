@@ -8,6 +8,6 @@ spec:
     app: openai-proxy
   ports:
     - protocol: TCP
-      port: 10000
+      port: 80
       targetPort: http
   type: NodePort

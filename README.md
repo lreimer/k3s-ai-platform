@@ -15,6 +15,10 @@ brew install go-task
 # make sure you have set the correct kube-context, e.g. rancher-desktop
 taks create-secret
 task bootstrap-flux
+
+# several dashboards and services are accessible via Ingress
+open http://grafana.127.0.0.1.sslip.io
+
 ```
 
 ## Maintainer
