@@ -16,45 +16,49 @@ spec:
   targetNamespace: kyverno
   values:
     admissionController:
-      clusterRole:
-        extraResources:
-         - apiGroups:
-           - ''
-           resources:
-           - secrets
-           verbs:
-           - create
-           - update
-           - delete
-           - list
-           - get
+      rbac:
+        clusterRole:
+          extraResources:
+          - apiGroups:
+            - ''
+            resources:
+            - secrets
+            verbs:
+            - create
+            - update
+            - delete
+            - list
+            - get
     backgroundController:
-      clusterRole:
-        extraResources:
-         - apiGroups:
-           - ''
-           resources:
-           - secrets
-           verbs:
-           - create
-           - update
-           - delete
-           - patch
+      rbac:
+        clusterRole:
+          extraResources:
+          - apiGroups:
+            - ''
+            resources:
+            - secrets
+            verbs:
+            - create
+            - update
+            - delete
+            - patch
     cleanupController:
-      clusterRole:
-        extraResources:
-         - apiGroups:
-           - ''
-           resources:
-           - secrets
-           verbs:
-           - delete
-           - list
-           - watch
+      rbac:
+        clusterRole:
+          extraResources:
+          - apiGroups:
+            - ''
+            resources:
+            - secrets
+            verbs:
+            - delete
+            - list
+            - watch
     reportsController:
-      clusterRole:
-        extraResources:
-         - apiGroups:
-           - ''
-           resources:
-           - secrets
+      rbac:
+        clusterRole:
+          extraResources:
+          - apiGroups:
+            - ''
+            resources:
+            - secrets
