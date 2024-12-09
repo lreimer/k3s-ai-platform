@@ -28,3 +28,18 @@ spec:
   sourceRef:
     kind: GitRepository
     name: flux-system
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: interfaces
+  namespace: flux-system
+spec:
+  interval: 10m0s
+  path: ./platform/interfaces
+  prune: true
+  dependsOn:
+    - name: domain
+  sourceRef:
+    kind: GitRepository
+    name: flux-system

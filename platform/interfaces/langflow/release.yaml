@@ -23,11 +23,12 @@ spec:
         password: "langflow-postgres"
         database: "langflow-db"
 
-    langflow:
-      frontend:
-        service:
-          type: NodePort
+    ingress:
+      enabled: true
+      hosts:
+        - host: langflow-ide.127.0.0.1.sslip.io
 
+    langflow:
       backend:
         env:
           - name: "LANGFLOW_PORT"

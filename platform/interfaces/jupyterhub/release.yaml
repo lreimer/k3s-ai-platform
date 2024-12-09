@@ -14,3 +14,11 @@ spec:
   interval: 1h0m0s
   releaseName: jupyterhub
   targetNamespace: jupyterhub
+  values:
+    proxy:
+      service:
+        type: NodePort
+    ingress:
+      enabled: true
+      hosts:
+        - host: jupyterhub.127.0.0.1.sslip.io
