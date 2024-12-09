@@ -27,14 +27,14 @@ spec:
       enabled: true
       hosts:
         - host: langflow.127.0.0.1.sslip.io
-      paths:
-        - backend:
-          service:
-            name: langflow
-            port:
-              number: 8080
-          path: /
-          pathType: Prefix
+          paths:
+          - backend:
+              service:
+                name: langflow
+                port:
+                  number: 8080
+            path: /
+            pathType: Prefix
 
     langflow:
       backend:
