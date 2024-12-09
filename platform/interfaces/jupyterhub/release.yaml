@@ -20,6 +20,6 @@ spec:
         type: NodePort
 
     ingress:
-      enabled: false
+      enabled: true
       hosts:
-        - host: jupyterhub.127.0.0.1.sslip.io
+        - jupyther.127.0.0.1.sslip.io

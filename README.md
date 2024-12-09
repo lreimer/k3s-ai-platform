@@ -27,6 +27,12 @@ curl http://openai.127.0.0.1.sslip.io/v1/chat/completions \
      "messages": [{"role": "user", "content": "Say this is a test!"}],
      "temperature": 0.7
    }'
+
+# the Langflow UI is accessible via Ingress
+open http://langflow.127.0.0.1.sslip.io 
+
+# the Jupyther Hub UI is accessible via Ingress
+open http://jupyther.127.0.0.1.sslip.io 
 ```
 
 ## Maintainer
