@@ -35,13 +35,27 @@ open http://langflow.127.0.0.1.sslip.io
 open http://jupyther.127.0.0.1.sslip.io 
 ```
 
-## Crossplane GCP
+## GCP with Crossplane (optional)
 
 ```bash
+# create a GCP service account with the required roles, e.g. storage admin
+export PROJECT_ID=cloud-native-experience-lab
 gcloud iam service-accounts create crossplane-system --display-name=Crossplane
-gcloud projects add-iam-policy-binding cloud-native-experience-lab --role=roles/iam.serviceAccountUser --member serviceAccount:crossplane-system@cloud-native-experience-lab.iam.gserviceaccount.com
-gcloud projects add-iam-policy-binding cloud-native-experience-lab --role=roles/storage.admin --member serviceAccount:crossplane-system@cloud-native-experience-lab.iam.gserviceaccount.com
-gcloud iam service-accounts keys create $HOME./.gcp/credentials.json --iam-account crossplane-system@cloud-native-experience-lab.iam.gserviceaccount.com
+gcloud projects add-iam-policy-binding $PROJECT_ID --role=roles/iam.serviceAccountUser --member serviceAccount:crossplane-system@$PROJECT_ID.iam.gserviceaccount.com
+gcloud projects add-iam-policy-binding $PROJECT_ID --role=roles/storage.admin --member serviceAccount:crossplane-system@$PROJECT_ID.iam.gserviceaccount.com
+gcloud iam service-accounts keys create $HOME/.gcp/crossplane-system.json --iam-account crossplane-system@$PROJECT_ID.iam.gserviceaccount.com
+
+# create Kubernetes secret and apply provider configuration
+kubectl create secret generic gcp-secret -n crossplane-system --from-file=credentials=${HOME}/.gcp/crossplane-system.json
+kubectl apply -k platform/cloud/gcp/
+```
+
+## AWS with Crossplane (optional)
+
+```bash
+# create Kubernetes secret and apply provider configuration
+kubectl create secret generic aws-secret -n crossplane-system --from-file=credentials=${HOME}/.aws/credentials
+kubectl apply -k platform/cloud/aws/
 ```
 
 ## Maintainer
