@@ -14,7 +14,7 @@ brew install go-task
 # make sure you have set a valid GITHUB_TOKEN environment variable
 # make sure you have set the correct kube-context, e.g. rancher-desktop
 task create-secret
-task bootstrap-flux
+task flux-bootstrap
 
 # the Kube Prometheus Stack is accessiable via Ingress
 open http://grafana.127.0.0.1.sslip.io
