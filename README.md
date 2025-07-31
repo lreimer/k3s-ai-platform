@@ -33,6 +33,9 @@ open http://langflow.127.0.0.1.sslip.io
 
 # the Jupyther Hub UI is accessible via Ingress
 open http://jupyther.127.0.0.1.sslip.io 
+
+# the Flowise UI is accessible via Ingress
+open http://flowise.127.0.0.1.sslip.io
 ```
 
 ## GCP with Crossplane (optional)

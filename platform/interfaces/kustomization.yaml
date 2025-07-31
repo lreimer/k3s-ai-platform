@@ -3,4 +3,4 @@ kind: Kustomization
 resources:
   - langflow/
   - jupyterhub/
-  # - flowise/
+  - flowise/
